@@ -1,0 +1,20 @@
+[package]
+name = "app"
+version = "0.1.0"
+description = "A Tauri App"
+authors = [ "You" ]
+repository = ""
+edition = "2018"
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = [ "derive" ] }
+tauri = { version = "1.0.0-beta.8", features = ["api-all"] }
+tauri-plugin-window-positioner = { path = "../../../" }
+
+[build-dependencies]
+tauri-build = { version = "1.0.0-beta.4" }
+
+[features]
+default = [ "custom-protocol" ]
+custom-protocol = [ "tauri/custom-protocol" ]
