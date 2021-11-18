@@ -1,1 +1,1 @@
-# Tauri Plugin window-positioner
+# Tauri Plugin positioner
