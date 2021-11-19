@@ -1,6 +1,6 @@
 ---
-"tauri-plugin-positioner": patch
-"tauri-plugin-positioner-api": patch
+"tauri-plugin-positioner": minor
+"tauri-plugin-positioner-api": minor
 ---
 
 Update package/crate metadata
