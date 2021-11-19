@@ -36,7 +36,7 @@ fn main() {
 
 Now you can import the JavaScript API package and move to window:
 
-```js
+```javascript
 import { move_window, Position } from 'tauri-plugin-positioner-api'
 
 move_window(Position.TopRight)
