@@ -7,6 +7,9 @@
   "main": "webview-dist/index.js",
   "types": "webview-dist/index.d.ts",
   "license": "MIT",
+  "files": [
+    "webview-dist"
+  ],
   "scripts": {
     "build": "rollup -c ./webview-src/rollup.config.js",
     "prepublishOnly": "yarn build",
