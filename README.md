@@ -60,7 +60,7 @@ If you only intend on moving the window from rust code, you can just import the 
 > Note: `Window.move_window` method must be called from a different thread!
 
 ```rust
-use tauri-plugin-positioner::{WindowExt, Position};
+use tauri_plugin_positioner::{WindowExt, Position};
 
 fn main() {
     tauri::Builder::default()
