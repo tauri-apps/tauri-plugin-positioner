@@ -5,6 +5,10 @@ authors = [ "Jonas Kruckenberg" ]
 description = "Helps positioning your tauri windows."
 edition = "2021"
 exclude = [ "/examples", "/webview-dist", "/webview-src", "node_modules" ]
+license = "MIT"
+repository = "https://github.com/JonasKruckenberg/tauri-plugin-positioner"
+readme = "README.md"
+categories = [ "tauri-plugin" ]
 
 [dependencies]
 tauri = { version = "1.0.0-beta.8", features = [ "api-all" ] }

@@ -10,6 +10,7 @@
   "files": [
     "webview-dist"
   ],
+  "keywords": ["tauri-plugin"],
   "scripts": {
     "build": "rollup -c ./webview-src/rollup.config.js",
     "prepublishOnly": "yarn build",
