@@ -1,10 +1,10 @@
 [package]
 name = "tauri-plugin-positioner"
-version = "0.0.0"
+version = "0.1.0"
 authors = [ "Jonas Kruckenberg" ]
 description = "Helps positioning your tauri windows."
 edition = "2021"
-exclude = ["/examples", "/webview-dist", "/webview-src", "node_modules"]
+exclude = [ "/examples", "/webview-dist", "/webview-src", "node_modules" ]
 
 [dependencies]
 tauri = { version = "1.0.0-beta.8", features = [ "api-all" ] }
