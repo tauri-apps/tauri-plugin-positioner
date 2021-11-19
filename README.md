@@ -35,7 +35,7 @@ yarn add github:JonasKruckenberg/tauri-plugin-positioner
 You need to register the plugin first:
 
 ```rust
-use tauri-plugin-positioner::{Positioner, Position};
+use tauri_plugin_positioner::{Positioner, Position};
 
 fn main() {
     tauri::Builder::default()
