@@ -19,7 +19,7 @@ A plugin for tauri that helps positioning you windows at well known locations.
 
 ```toml
 [dependencies]
-tauri-plugin-positioner = { git = "https://github.com/JonasKruckenberg/tauri-plugin-positioner" }
+tauri-plugin-positioner = "0.1"
 ```
 
 ### JavaScript
