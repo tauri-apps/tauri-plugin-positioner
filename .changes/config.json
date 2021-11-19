@@ -4,6 +4,10 @@
     "rust": {
       "version": true,
       "getPublishedVersion": "cargo search ${ pkg.pkg } --limit 1 | sed -nE 's/^[^\"]*\"//; s/\".*//1p' -",
+      "prepublish": [
+        "sudo apt-get update",
+        "sudo apt-get install -y webkit2gtk-4.0"
+      ],
       "publish": [
         {
           "command": "cargo package --allow-dirty",
@@ -34,6 +38,12 @@
     "javascript": {
       "version": true,
       "getPublishedVersion": "npm view ${ pkgFile.pkg.name } version",
+      "prepublish": [
+        {
+          "command": "yarn",
+          "dryRunCommand": true
+        }
+      ],
       "publish": [
         {
           "command": "echo \"# Yarn Package Publish\"",
@@ -66,9 +76,7 @@
     "tauri-plugin-positioner-api": {
       "path": ".",
       "manager": "javascript",
-      "dependencies": [
-        "tauri-plugin-positioner"
-      ]
+      "dependencies": ["tauri-plugin-positioner"]
     }
   }
 }
