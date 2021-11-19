@@ -26,6 +26,39 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y webkit2gtk-4.0
+      - name: Get current date
+        run: echo "CURRENT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Cache cargo registry
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/registry
+          # Add date to the cache to keep it up to date
+          key: cargo-registry-${{ hashFiles('**/Cargo.toml') }}-${{ env.CURRENT_DATE }}
+          # Restore from outdated cache for speed
+          restore-keys: |
+           ubuntu-latest-cargo-registry-${{ hashFiles('**/Cargo.toml') }}
+           ubuntu-latest-cargo-registry-
+      - name: Cache cargo index
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/git
+          # Add date to the cache to keep it up to date
+          key: cargo-index-${{ hashFiles('**/Cargo.toml') }}-${{ env.CURRENT_DATE }}
+          # Restore from outdated cache for speed
+          restore-keys: |
+           ubuntu-latest-cargo-index-${{ hashFiles('**/Cargo.toml') }}
+           ubuntu-latest-cargo-index-
+      - name: Cache cargo target
+        uses: actions/cache@v2
+        with:
+          path: target
+          # Add date to the cache to keep it up to date
+          key: cargo-build-target-${{ hashFiles('**/Cargo.toml') }}-${{ env.CURRENT_DATE }}
+          # Restore from outdated cache for speed
+          restore-keys: |
+           ubuntu-latest-cargo-build-target-${{ hashFiles('**/Cargo.toml') }}
+           ubuntu-latest-cargo-build-target-
       - name: covector version-or-publish
         uses: jbolda/covector/packages/action@covector-v0
         id: covector
