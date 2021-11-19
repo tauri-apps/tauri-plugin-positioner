@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "sirv-cli": "1.0.14",
-    "tauri-plugin-window-positioner-api": "link:../../"
+    "tauri-plugin-positioner-api": "link:../../"
   }
 }

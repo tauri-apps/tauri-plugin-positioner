@@ -11,6 +11,7 @@ async fn move_window<R: Runtime>(mut window: tauri::Window<R>, position: Positio
   window.move_window(position)
 }
 
+/// The tauri plugin that exposes [`WindowExt::move_window`] to the webview.
 pub struct Positioner<R: Runtime> {
   invoke_handler: Box<dyn Fn(Invoke<R>) + Send + Sync>,
 }

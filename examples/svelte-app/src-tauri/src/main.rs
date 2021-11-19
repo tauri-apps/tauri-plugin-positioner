@@ -3,7 +3,7 @@
   windows_subsystem = "windows"
 )]
 use tauri::Manager;
-use tauri_plugin_window_positioner::{WindowExt, Position, Positioner};
+use tauri_plugin_positioner::{WindowExt, Position, Positioner};
 
 fn main() {
   tauri::Builder::default()

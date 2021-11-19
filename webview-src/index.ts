@@ -3,6 +3,9 @@
 
 import { invoke } from "@tauri-apps/api/tauri";
 
+/**
+ * Well known window positions.
+ */
 export enum Position {
   TopLeft = 0,
   TopRight,
@@ -21,6 +24,12 @@ export enum Position {
   //   TrayBottomCenter,
 }
 
+/**
+ * Moves the `Window` to the given {@link Position} using `WindowExt.move_window()`
+ * All positions are relative to the **current** screen.
+ * 
+ * @param to The {@link Position} to move to.
+ */
 export function move_window(to: Position) {
   invoke('plugin:positioner|move_window', {
     position: to

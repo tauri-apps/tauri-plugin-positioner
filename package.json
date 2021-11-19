@@ -1,6 +1,6 @@
 {
   "name": "tauri-plugin-positioner-api",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "author": "Jonas Kruckenberg",
   "description": "Helps positioning your tauri windows.",
   "browser": "webview-dist/index.js",

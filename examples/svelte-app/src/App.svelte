@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { move_window, Position } from 'tauri-plugin-window-positioner-api'
+	import { move_window, Position } from 'tauri-plugin-positioner-api'
 
 	function _top_left() {
 		move_window(Position.TopLeft)

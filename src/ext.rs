@@ -4,6 +4,7 @@
 use serde_repr::Deserialize_repr;
 use tauri::{PhysicalPosition, PhysicalSize, Result, Runtime, Window};
 
+/// Well known window positions.
 #[derive(Debug, Deserialize_repr)]
 #[repr(u16)]
 pub enum Position {
@@ -24,9 +25,9 @@ pub enum Position {
   // TrayBottomCenter,
 }
 
-/// A [Window] extension that provides extra methods related to positioning.
+/// A [`Window`] extension that provides extra methods related to positioning.
 pub trait WindowExt {
-  /// Moves the [Window] to the given [Position]
+  /// Moves the [`Window`] to the given [`Position`]
   ///
   /// All positions are relative to the **current** screen.
   fn move_window(&mut self, position: Position) -> Result<()>;
