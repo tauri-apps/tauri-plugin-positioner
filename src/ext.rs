@@ -24,8 +24,12 @@ pub enum Position {
   // TrayBottomCenter,
 }
 
+/// A [Window] extension that provides extra methods related to positioning.
 pub trait WindowExt {
-  fn move_window(&mut self, pos: Position) -> Result<()>;
+  /// Moves the [Window] to the given [Position]
+  ///
+  /// All positions are relative to the **current** screen.
+  fn move_window(&mut self, position: Position) -> Result<()>;
 }
 
 impl<R: Runtime> WindowExt for Window<R> {
