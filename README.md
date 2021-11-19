@@ -1,4 +1,4 @@
-# Tauri Plugin positioner
+# Tauri plugin positioner
 
 A plugin for tauri that helps positioning you windows at well known locations.
 
