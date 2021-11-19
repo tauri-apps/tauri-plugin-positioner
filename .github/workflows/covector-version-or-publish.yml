@@ -31,11 +31,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           command: 'version-or-publish'
           createRelease: true
-      - name: create pull request
+      - name: Create Pull Request With Versions Bumped
         id: cpr
-        uses: tauri-apps/create-pull-request@v2.8.0
+        uses: peter-evans/create-pull-request@v3
+        if: steps.covector.outputs.commandRan == 'version'
         with:
           title: "Publish New Versions"
+          commit-message: "publish new versions"
           labels: "version updates"
           branch: "release"
           body: ${{ steps.covector.outputs.change }}
