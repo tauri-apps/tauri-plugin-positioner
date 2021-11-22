@@ -13,7 +13,7 @@
 
 A plugin for tauri that helps positioning you windows at well known locations.
 
-This plugin is a port of [electron-positioner](https://github.com/jenslind/electron-positioner) for [tauri](https://tauri.studio)
+This plugin is a port of [electron-positioner](https://github.com/jenslind/electron-positioner) for [tauri](https://tauri.studio).
 
 ## Install
 
