@@ -16,12 +16,12 @@ export enum Position {
   LeftCenter,
   RightCenter,
   Center,
-  //   TrayLeft,
-  //   TrayBottomLeft,
-  //   TrayRight,
-  //   TrayBottomRight,
-  //   TrayCenter,
-  //   TrayBottomCenter,
+  TrayLeft,
+  TrayBottomLeft,
+  TrayRight,
+  TrayBottomRight,
+  TrayCenter,
+  TrayBottomCenter,
 }
 
 /**
