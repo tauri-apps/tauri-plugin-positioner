@@ -3,9 +3,9 @@
 
 #[cfg(feature = "system-tray")]
 use crate::Tray;
+use serde_repr::Deserialize_repr;
 #[cfg(feature = "system-tray")]
 use tauri::Manager;
-use serde_repr::Deserialize_repr;
 use tauri::{PhysicalPosition, PhysicalSize, Result, Runtime, Window};
 
 /// Well known window positions.
@@ -40,11 +40,11 @@ pub trait WindowExt {
   /// Moves the [`Window`] to the given [`Position`]
   ///
   /// All positions are relative to the **current** screen.
-  fn move_window(&mut self, position: Position) -> Result<()>;
+  fn move_window(&self, position: Position) -> Result<()>;
 }
 
 impl<R: Runtime> WindowExt for Window<R> {
-  fn move_window(&mut self, pos: Position) -> Result<()> {
+  fn move_window(&self, pos: Position) -> Result<()> {
     use Position::*;
 
     let screen = self.current_monitor()?.unwrap();
@@ -153,7 +153,7 @@ impl<R: Runtime> WindowExt for Window<R> {
       TrayCenter => {
         if let (Some((tray_x, tray_y)), Some((tray_width, _))) = (tray_position, tray_size) {
           PhysicalPosition {
-            x: tray_x + (tray_width / 2) - (window_size.width),
+            x: tray_x + (tray_width / 2) - (window_size.width / 2),
             y: tray_y - window_size.height,
           }
         } else {
@@ -164,7 +164,7 @@ impl<R: Runtime> WindowExt for Window<R> {
       TrayBottomCenter => {
         if let (Some((tray_x, tray_y)), Some((tray_width, _))) = (tray_position, tray_size) {
           PhysicalPosition {
-            x: tray_x + (tray_width / 2) - (window_size.width),
+            x: tray_x + (tray_width / 2) - (window_size.width / 2),
             y: tray_y,
           }
         } else {

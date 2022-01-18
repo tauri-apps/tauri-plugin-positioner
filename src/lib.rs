@@ -44,7 +44,7 @@ pub fn on_tray_event<R: Runtime>(app: &AppHandle<R>, event: &SystemTrayEvent) {
 }
 
 #[tauri::command]
-async fn move_window<R: Runtime>(mut window: tauri::Window<R>, position: Position) -> Result<()> {
+async fn move_window<R: Runtime>(window: tauri::Window<R>, position: Position) -> Result<()> {
   window.move_window(position)
 }
 
