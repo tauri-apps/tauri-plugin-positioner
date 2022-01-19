@@ -15,12 +15,12 @@ var Position;
     Position[Position["LeftCenter"] = 6] = "LeftCenter";
     Position[Position["RightCenter"] = 7] = "RightCenter";
     Position[Position["Center"] = 8] = "Center";
-    //   TrayLeft,
-    //   TrayBottomLeft,
-    //   TrayRight,
-    //   TrayBottomRight,
-    //   TrayCenter,
-    //   TrayBottomCenter,
+    Position[Position["TrayLeft"] = 9] = "TrayLeft";
+    Position[Position["TrayBottomLeft"] = 10] = "TrayBottomLeft";
+    Position[Position["TrayRight"] = 11] = "TrayRight";
+    Position[Position["TrayBottomRight"] = 12] = "TrayBottomRight";
+    Position[Position["TrayCenter"] = 13] = "TrayCenter";
+    Position[Position["TrayBottomCenter"] = 14] = "TrayBottomCenter";
 })(Position || (Position = {}));
 /**
  * Moves the `Window` to the given {@link Position} using `WindowExt.move_window()`

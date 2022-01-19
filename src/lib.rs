@@ -6,8 +6,45 @@ mod ext;
 pub use ext::*;
 use tauri::{plugin::Plugin, Invoke, Result, Runtime};
 
+#[cfg(feature = "system-tray")]
+use tauri::{AppHandle, Manager, PhysicalPosition, PhysicalSize, SystemTrayEvent};
+
+#[cfg(feature = "system-tray")]
+struct Tray(std::sync::Mutex<Option<(PhysicalPosition<f64>, PhysicalSize<f64>)>>);
+
+#[cfg(feature = "system-tray")]
+pub fn on_tray_event<R: Runtime>(app: &AppHandle<R>, event: &SystemTrayEvent) {
+  match event {
+    SystemTrayEvent::LeftClick { position, size, .. } => {
+      app
+        .state::<Tray>()
+        .0
+        .lock()
+        .unwrap()
+        .replace((*position, *size));
+    }
+    SystemTrayEvent::RightClick { position, size, .. } => {
+      app
+        .state::<Tray>()
+        .0
+        .lock()
+        .unwrap()
+        .replace((*position, *size));
+    }
+    SystemTrayEvent::DoubleClick { position, size, .. } => {
+      app
+        .state::<Tray>()
+        .0
+        .lock()
+        .unwrap()
+        .replace((*position, *size));
+    }
+    _ => (),
+  }
+}
+
 #[tauri::command]
-async fn move_window<R: Runtime>(mut window: tauri::Window<R>, position: Position) -> Result<()> {
+async fn move_window<R: Runtime>(window: tauri::Window<R>, position: Position) -> Result<()> {
   window.move_window(position)
 }
 
@@ -27,6 +64,16 @@ impl<R: Runtime> Default for Positioner<R> {
 impl<R: Runtime> Plugin<R> for Positioner<R> {
   fn name(&self) -> &'static str {
     "positioner"
+  }
+
+  #[cfg(feature = "system-tray")]
+  fn initialize(
+    &mut self,
+    app: &AppHandle<R>,
+    _config: serde_json::Value,
+  ) -> tauri::plugin::Result<()> {
+    app.manage(Tray(std::sync::Mutex::new(None)));
+    Ok(())
   }
 
   fn extend_api(&mut self, message: Invoke<R>) {
