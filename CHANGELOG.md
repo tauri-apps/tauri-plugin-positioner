@@ -1,5 +1,10 @@
 # Changelog
 
+## \[0.2.0]
+
+- Add SystemTray relative positions.
+  - [765b3ed](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/765b3ed90056d85ae88b0852b7107ff2b84a6c3a) Create feat-tray-pos.md on 2022-01-19
+
 ## \[0.1.0]
 
 - Update package/crate metadata
