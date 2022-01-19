@@ -4,14 +4,20 @@
   "author": "Jonas Kruckenberg",
   "description": "Helps positioning your tauri windows.",
   "browser": "webview-dist/index.js",
-  "main": "webview-dist/index.js",
   "types": "webview-dist/index.d.ts",
   "license": "MIT",
-  "files": [
-    "webview-dist"
-  ],
+  "type": "module",
   "keywords": [
     "tauri-plugin"
+  ],
+  "exports": {
+    ".": {
+      "import": "./webview-dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "webview-dist"
   ],
   "scripts": {
     "build": "rollup -c ./webview-src/rollup.config.js",
