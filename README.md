@@ -21,7 +21,7 @@ This plugin is a port of [electron-positioner](https://github.com/jenslind/elect
 
 ```toml
 [dependencies]
-tauri-plugin-positioner = "0.1"
+tauri-plugin-positioner = "0.2"
 ```
 
 ### JavaScript
