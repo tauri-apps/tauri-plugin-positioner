@@ -12,7 +12,7 @@ categories = [ "gui", "web-programming" ]
 keywords = [ "tauri-plugin" ]
 
 [dependencies]
-tauri = { version = "1.0.0-beta.8", features = [ "api-all" ] }
+tauri = { version = "1.0.0-rc.0", features = [ "api-all" ] }
 serde = "1"
 serde_json = "1"
 serde_repr = "0.1"
