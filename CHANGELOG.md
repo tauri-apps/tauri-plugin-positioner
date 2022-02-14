@@ -1,5 +1,10 @@
 # Changelog
 
+## \[0.2.1]
+
+- Update `tauri` to `1.0.0-rc.1`, `serde` to `1.0.136` and `serde_json` to `1.0.79`.
+  - [2095b6a](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/2095b6a4a4ab5590add099ddb2b1e8118e3496e4) add dep update changefile on 2022-02-14
+
 ## \[0.2.0]
 
 - Add SystemTray relative positions.
