@@ -21,8 +21,8 @@
   ],
   "scripts": {
     "build": "rollup -c ./webview-src/rollup.config.js",
-    "prepublishOnly": "yarn build",
-    "pretest": "yarn build"
+    "prepublishOnly": "pnpm run build",
+    "pretest": "pnpm run build"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "13.1.3",

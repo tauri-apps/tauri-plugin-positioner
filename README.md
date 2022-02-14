@@ -27,9 +27,11 @@ tauri-plugin-positioner = "0.2"
 ### JavaScript
 
 ```
-npm install github:JonasKruckenberg/tauri-plugin-positioner
+pnpm add tauri-plugin-positioner
 # or
-yarn add github:JonasKruckenberg/tauri-plugin-positioner
+npm install tauri-plugin-positioner
+# or
+yarn add tauri-plugin-positioner
 ```
 
 ## Usage
