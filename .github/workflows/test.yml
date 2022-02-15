@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/test.yml'
+      - 'src/**'
   pull_request:
     branches:
       - main
