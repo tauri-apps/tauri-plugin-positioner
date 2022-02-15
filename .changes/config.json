@@ -38,12 +38,6 @@
     "javascript": {
       "version": true,
       "getPublishedVersion": "pnpm view ${ pkgFile.pkg.name } version",
-      "prepublish": [
-        {
-          "command": "pnpm install",
-          "dryRunCommand": true
-        }
-      ],
       "publish": [
         {
           "command": "echo \"# pnpm Package Publish\"",
