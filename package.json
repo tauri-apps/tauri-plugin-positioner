@@ -3,37 +3,29 @@
   "version": "0.2.1",
   "author": "Jonas Kruckenberg",
   "description": "Helps positioning your tauri windows.",
-  "browser": "webview-dist/index.js",
-  "types": "webview-dist/index.d.ts",
+  "browser": "client-dist/index.js",
+  "module": "client-dist/index.js",
+  "types": "client-dist/index.d.ts",
   "license": "MIT",
   "type": "module",
   "keywords": [
     "tauri-plugin"
   ],
-  "exports": {
-    ".": {
-      "import": "./webview-dist/index.mjs"
-    },
-    "./package.json": "./package.json"
-  },
   "files": [
-    "webview-dist"
+    "client-dist"
   ],
   "scripts": {
-    "build": "rollup -c ./webview-src/rollup.config.js",
+    "build": "tsup",
     "prepublishOnly": "pnpm run build",
     "pretest": "pnpm run build"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "13.1.3",
-    "@rollup/plugin-typescript": "8.3.0",
     "covector": "^0.7.3",
-    "rollup": "2.67.2",
-    "rollup-plugin-terser": "7.0.2",
-    "typescript": "4.5.5"
+    "tsup": "^5.11.13",
+    "typescript": "4.5.5",
+    "tslib": "^2.1.0"
   },
   "dependencies": {
-    "@tauri-apps/api": "1.0.0-rc.1",
-    "tslib": "^2.1.0"
+    "@tauri-apps/api": "1.0.0-rc.1"
   }
 }
