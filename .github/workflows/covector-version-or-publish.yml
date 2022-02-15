@@ -12,49 +12,35 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v1
+
+      - uses: actions-rs/toolchain@v1
         with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org'
+          profile: minimal
+          toolchain: stable
+
+      - uses: Swatinem/rust-cache@v1
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6
+          run_install: true
+
       - name: cargo login
         run: cargo login ${{ secrets.CRATE_TOKEN }}
+
       - name: git config
         run: |
           git config --global user.name "${{ github.event.pusher.name }}"
           git config --global user.email "${{ github.event.pusher.email }}"
-      - name: Get current date
-        run: echo "CURRENT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
-      - name: Cache cargo registry
-        uses: actions/cache@v2
-        with:
-          path: ~/.cargo/registry
-          # Add date to the cache to keep it up to date
-          key: cargo-registry-${{ hashFiles('**/Cargo.toml') }}-${{ env.CURRENT_DATE }}
-          # Restore from outdated cache for speed
-          restore-keys: |
-           ubuntu-latest-cargo-registry-${{ hashFiles('**/Cargo.toml') }}
-           ubuntu-latest-cargo-registry-
-      - name: Cache cargo index
-        uses: actions/cache@v2
-        with:
-          path: ~/.cargo/git
-          # Add date to the cache to keep it up to date
-          key: cargo-index-${{ hashFiles('**/Cargo.toml') }}-${{ env.CURRENT_DATE }}
-          # Restore from outdated cache for speed
-          restore-keys: |
-           ubuntu-latest-cargo-index-${{ hashFiles('**/Cargo.toml') }}
-           ubuntu-latest-cargo-index-
-      - name: Cache cargo target
-        uses: actions/cache@v2
-        with:
-          path: target
-          # Add date to the cache to keep it up to date
-          key: cargo-build-target-${{ hashFiles('**/Cargo.toml') }}-${{ env.CURRENT_DATE }}
-          # Restore from outdated cache for speed
-          restore-keys: |
-           ubuntu-latest-cargo-build-target-${{ hashFiles('**/Cargo.toml') }}
-           ubuntu-latest-cargo-build-target-
       - name: covector version-or-publish
         uses: jbolda/covector/packages/action@covector-v0
         id: covector
@@ -64,6 +50,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           command: 'version-or-publish'
           createRelease: true
+          
       - name: Create Pull Request With Versions Bumped
         id: cpr
         uses: peter-evans/create-pull-request@v3
