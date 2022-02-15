@@ -56,7 +56,7 @@
           "pipe": true
         },
         {
-          "command": "pnpm publish --access public --loglevel silly",
+          "command": "pnpm publish --access public --loglevel silly --no-git-checks",
           "dryRunCommand": "pnpm publish --dry-run --access public",
           "pipe": true
         },
