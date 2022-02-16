@@ -38,9 +38,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y webkit2gtk-4.0
-    
-    - name: Mock dist directory
-      run: mkdir dist
 
     - name: Run tests 
       uses: actions-rs/cargo@v1
