@@ -1,5 +1,11 @@
 # Changelog
 
+## \[0.2.2]
+
+- Update README.md
+  - Bumped due to a bump in tauri-plugin-positioner.
+  - [92d6c3d](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/92d6c3dca00a6b3562682804a649c0023831ce2b) Create docs-update-readme.md on 2022-02-17
+
 ## \[0.2.1]
 
 - Update `tauri` to `1.0.0-rc.1`, `serde` to `1.0.136` and `serde_json` to `1.0.79`.
