@@ -71,10 +71,7 @@ fn main() {
         .setup(|app| {
           let mut win = app.get_window("main").unwrap();
       
-          // Call this method from a different thread
-          tauri::async_runtime::spawn(async move {
-            let _ = win.move_window(Position::TopRight);
-          });
+          let _ = win.move_window(Position::TopRight);
           
           Ok(())
         })
