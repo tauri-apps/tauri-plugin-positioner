@@ -8,3 +8,4 @@ debug.log
 
 /target
 node_modules/
+.npmrc
