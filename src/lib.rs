@@ -2,17 +2,20 @@
 // SPDX-License-Identifier: MIT
 
 //! A plugin for Tauri that helps position your windows at well-known locations.
-//! 
+//!
 //! # Cargo features
-//! 
-//! - **system-tray**: Enables system-tray-relative positions. 
+//!
+//! - **system-tray**: Enables system-tray-relative positions.
 //!   
 //!   Note: This requires attaching the Tauri plugin, *even* when using the trait extension only.
 
 mod ext;
 
 pub use ext::*;
-use tauri::{plugin::{self, TauriPlugin}, Result, Runtime};
+use tauri::{
+  plugin::{self, TauriPlugin},
+  Result, Runtime,
+};
 
 #[cfg(feature = "system-tray")]
 use tauri::{AppHandle, Manager, PhysicalPosition, PhysicalSize, SystemTrayEvent};
@@ -58,11 +61,14 @@ async fn move_window<R: Runtime>(window: tauri::Window<R>, position: Position) -
 
 /// The Tauri plugin that exposes [`WindowExt::move_window`] to the webview.
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
-  plugin::Builder::new("positioner")
-    .invoke_handler(tauri::generate_handler![move_window])
-    .setup(|app_handle| {
+  let plugin = plugin::Builder::new("positioner")
+    .invoke_handler(tauri::generate_handler![move_window]);
+
+    #[cfg(feature = "system-tray")]
+    let plugin = plugin.setup(|app_handle| {
       app_handle.manage(Tray(std::sync::Mutex::new(None)));
       Ok(())
-    })
-    .build()
+    });
+
+    plugin.build()
 }
