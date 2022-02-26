@@ -1,5 +1,12 @@
 # Changelog
 
+## \[0.2.3]
+
+- **Breaking Change**: Uses the new Tauri plugin builder pattern. Use `tauri_plugin_positioner::init()` instead of `tauri_plugin_positioner::Positioner::default()`.
+  - Bumped due to a bump in tauri-plugin-positioner.
+  - [14837a8](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/14837a8d9cecdd6014867d4ef00fb98f21b2249d) refactor: use new builder pattern on 2022-02-26
+  - [59874d8](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/59874d827471dfb889662fadc74fec1f2243b89e) fix typo on 2022-02-26
+
 ## \[0.2.2]
 
 - Update README.md
