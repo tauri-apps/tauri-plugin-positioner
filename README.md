@@ -11,7 +11,7 @@
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-url]: LICENSE
 
-A plugin for tauri that helps positioning you windows at well known locations.
+A plugin for Tauri that helps position your windows at well-known locations.
 
 This plugin is a port of [electron-positioner](https://github.com/jenslind/electron-positioner) for [tauri](https://tauri.studio).
 
@@ -39,17 +39,15 @@ yarn add tauri-plugin-positioner
 You need to register the plugin first:
 
 ```rust
-use tauri_plugin_positioner::{Positioner, Position};
-
 fn main() {
     tauri::Builder::default()
-        .plugin(Positioner::default())
+        .plugin(tauri_plugin_positioner::init())
         .build()
         .run();
 }
 ```
 
-Now you can import the JavaScript API package and move to window:
+Now you can import the JavaScript API package and move the window:
 
 ```javascript
 import { move_window, Position } from 'tauri-plugin-positioner-api'
@@ -59,7 +57,7 @@ move_window(Position.TopRight)
 
 ### Rust only
 
-If you only intend on moving the window from rust code, you can just import the `Window` trait extension instead of registering the plugin:
+If you only intend on moving the window from rust code, you can import the `Window` trait extension instead of registering the plugin:
 
 > Note: `Window.move_window` method must be called from a different thread!
 
