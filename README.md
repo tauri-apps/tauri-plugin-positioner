@@ -42,8 +42,8 @@ You need to register the plugin first:
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_positioner::init())
-        .build()
-        .run();
+        .run(tauri::generate_context!())
+        .expect("failed to run app");
 }
 ```
 
@@ -73,8 +73,8 @@ fn main() {
           
           Ok(())
         })
-        .build()
-        .run();
+        .run(tauri::generate_context!())
+        .expect("failed to run app");
 }
 ```
 
