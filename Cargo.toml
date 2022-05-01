@@ -14,7 +14,7 @@ keywords = [ "tauri-plugin" ]
 [dependencies]
 tauri = { version = "1.0.0-rc.8", features = [ "api-all" ] }
 serde = "1.0.136"
-serde_json = "1.0.79"
+serde_json = "1.0.80"
 serde_repr = "0.1.7"
 
 [features]
