@@ -19,3 +19,6 @@ serde_repr = "0.1.8"
 
 [features]
 system-tray = [ "tauri/system-tray" ]
+
+[package.metadata.docs.rs]
+features = ["system-tray"]
