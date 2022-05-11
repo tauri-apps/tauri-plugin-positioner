@@ -4,13 +4,13 @@ importers:
 
   .:
     specifiers:
-      '@tauri-apps/api': 1.0.0-rc.4
+      '@tauri-apps/api': 1.0.0-rc.5
       covector: 0.7.3
       tslib: 2.4.0
       tsup: 5.12.6
       typescript: 4.6.4
     dependencies:
-      '@tauri-apps/api': 1.0.0-rc.4
+      '@tauri-apps/api': 1.0.0-rc.5
     devDependencies:
       covector: 0.7.3
       tslib: 2.4.0
@@ -288,8 +288,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@tauri-apps/api/1.0.0-rc.4:
-    resolution: {integrity: sha512-1HaUsx8+TzFHDoQ+Mmd6RWaMsPyZlurQHgACDt+il5e/ui6pDkumVXaS92SnY5XOcS4gBC0BkgjVfkWgcm/Oww==}
+  /@tauri-apps/api/1.0.0-rc.5:
+    resolution: {integrity: sha512-IiQg7pLByl/W3KRx9Whn1EWh9ZrBojkl9FAgCRJ4//e58var1WmNPHA92YC0i0DLSIF0JLLp0EQKRHJa+aaqlQ==}
     engines: {node: '>= 12.13.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
     dependencies:
       type-fest: 2.12.2
@@ -430,6 +430,12 @@ packages:
 
   /abbrev/1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
+    dev: true
+
+  /acorn/8.7.1:
+    resolution: {integrity: sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
     dev: true
 
   /agent-base/6.0.2:
@@ -2014,8 +2020,6 @@ packages:
       rollup: 2.58.0
       serialize-javascript: 4.0.0
       terser: 5.10.0
-    transitivePeerDependencies:
-      - acorn
     dev: true
 
   /rollup-pluginutils/2.8.2:
@@ -2439,12 +2443,11 @@ packages:
     resolution: {integrity: sha512-AMmF99DMfEDiRJfxfY5jj5wNH/bYO09cniSqhfoyxc8sFoYIgkJy86G04UoZU5VjlpnplVu0K6Tx6E9b5+DlHA==}
     engines: {node: '>=10'}
     hasBin: true
-    peerDependencies:
-      acorn: ^8.5.0
     peerDependenciesMeta:
       acorn:
         optional: true
     dependencies:
+      acorn: 8.7.1
       commander: 2.20.3
       source-map: 0.7.3
       source-map-support: 0.5.21
