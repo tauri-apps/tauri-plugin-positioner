@@ -1,5 +1,12 @@
 # Changelog
 
+## \[0.2.4]
+
+- Update Tauri dependencies
+  - [2095b6a](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/2095b6a4a4ab5590add099ddb2b1e8118e3496e4) add dep update changefile on 2022-02-14
+  - [53d3a50](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/53d3a501776f16741124aa961f521b9d7798c878) publish new versions ([#42](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/pull/42)) on 2022-02-14
+  - [9f32726](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/9f32726ede38bb9b2711f738a2f9fee7f0da2d73) Create update-deps.md on 2022-05-11
+
 ## \[0.2.3]
 
 - **Breaking Change**: Uses the new Tauri plugin builder pattern. Use `tauri_plugin_positioner::init()` instead of `tauri_plugin_positioner::Positioner::default()`.
@@ -27,4 +34,6 @@
 
 - Update package/crate metadata
   - [119d9c4](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/119d9c47639e1df16f5520a08f039bdb6f39532b) update metadata on 2021-11-19
+  - [39e517c](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/39e517c145a4a901839ae9b46e296370ce6ababf) Update update-metadata.md on 2021-11-19
+data on 2021-11-19
   - [39e517c](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/39e517c145a4a901839ae9b46e296370ce6ababf) Update update-metadata.md on 2021-11-19

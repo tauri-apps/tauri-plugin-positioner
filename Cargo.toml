@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-positioner"
-version = "1.0.0"
+version = "1.0.1"
 authors = [ "Jonas Kruckenberg" ]
 description = "Helps positioning your tauri windows."
 edition = "2021"
@@ -11,6 +11,9 @@ readme = "README.md"
 categories = [ "gui", "web-programming" ]
 keywords = [ "tauri-plugin" ]
 
+[package.metadata.docs.rs]
+features = [ "system-tray" ]
+
 [dependencies]
 tauri = { version = "1.0.0-rc.10", features = [ "api-all" ] }
 serde = "1.0.137"
@@ -19,6 +22,3 @@ serde_repr = "0.1.8"
 
 [features]
 system-tray = [ "tauri/system-tray" ]
-
-[package.metadata.docs.rs]
-features = ["system-tray"]
