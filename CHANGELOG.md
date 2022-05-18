@@ -1,5 +1,11 @@
 # Changelog
 
+## \[0.2.5]
+
+- Update deps
+  - Bumped due to a bump in tauri-plugin-positioner.
+  - [a8d3f73](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/a8d3f73b74829ef5d53d4fb028e59d09e8946399) Create chore-update-deps.md on 2022-05-18
+
 ## \[0.2.4]
 
 - Update Tauri dependencies
@@ -35,5 +41,5 @@
 - Update package/crate metadata
   - [119d9c4](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/119d9c47639e1df16f5520a08f039bdb6f39532b) update metadata on 2021-11-19
   - [39e517c](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/39e517c145a4a901839ae9b46e296370ce6ababf) Update update-metadata.md on 2021-11-19
-data on 2021-11-19
+    data on 2021-11-19
   - [39e517c](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/39e517c145a4a901839ae9b46e296370ce6ababf) Update update-metadata.md on 2021-11-19
