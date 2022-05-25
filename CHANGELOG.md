@@ -1,5 +1,11 @@
 # Changelog
 
+## \[0.2.6]
+
+- Update Tauri to v1.0.0-rc.12
+  - Bumped due to a bump in tauri-plugin-positioner.
+  - [de6d76f](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/de6d76f3a96a68e88a7ac434d65df4dbc82af122) Create update-tauri.md on 2022-05-25
+
 ## \[0.2.5]
 
 - Update deps
