@@ -15,10 +15,10 @@ keywords = [ "tauri-plugin" ]
 features = [ "system-tray" ]
 
 [dependencies]
-tauri = { version = "1.0.0-rc.12", features = [ "api-all" ] }
-serde = "1.0.137"
-serde_json = "1.0.81"
-serde_repr = "0.1.8"
+tauri = { version = "^1.0.0-rc.3", features = [ "api-all" ] }
+serde = "^1.0.137"
+serde_json = "^1.0.81"
+serde_repr = "^0.1.8"
 
 [features]
 system-tray = [ "tauri/system-tray" ]
