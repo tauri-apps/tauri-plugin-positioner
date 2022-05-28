@@ -10,7 +10,7 @@ jobs:
         with:
           fetch-depth: 0
       
-      - uses: pnpm/action-setup@v2.2.1
+      - uses: pnpm/action-setup@v2.2.2
         with:
           version: 6
           run_install: true
