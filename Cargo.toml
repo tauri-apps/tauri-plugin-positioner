@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-positioner"
-version = "1.0.3"
+version = "1.0.4"
 authors = [ "Jonas Kruckenberg" ]
 description = "Helps positioning your tauri windows."
 edition = "2021"
