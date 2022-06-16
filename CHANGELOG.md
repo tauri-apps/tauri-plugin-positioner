@@ -1,5 +1,11 @@
 # Changelog
 
+## \[0.2.7]
+
+- Update Tauri to v1.0.0
+  - Bumped due to a bump in tauri-plugin-positioner.
+  - [0bb73eb](https://www.github.com/JonasKruckenberg/tauri-plugin-positioner/commit/0bb73eb20dae87f730c0b5f4cc08e6689e25fdba) Create tauri-v1.md on 2022-06-16
+
 ## \[0.2.6]
 
 - Update Tauri to v1.0.0-rc.12
