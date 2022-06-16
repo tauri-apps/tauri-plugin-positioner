@@ -4,13 +4,13 @@ importers:
 
   .:
     specifiers:
-      '@tauri-apps/api': 1.0.0-rc.6
+      '@tauri-apps/api': 1.0.0
       covector: 0.7.3
       tslib: 2.4.0
       tsup: 6.1.2
       typescript: 4.7.3
     dependencies:
-      '@tauri-apps/api': 1.0.0-rc.6
+      '@tauri-apps/api': 1.0.0
     devDependencies:
       covector: 0.7.3
       tslib: 2.4.0
@@ -288,11 +288,11 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@tauri-apps/api/1.0.0-rc.6:
-    resolution: {integrity: sha512-/PbVs3/dUzid0/1XbML8tAkRSOmp+6Gv9ql02HGt3aIjNTvaL2902qEbiTX6xK++3oUoKJJ88t+V6IiNd1JUkw==}
-    engines: {node: '>= 12.13.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
+  /@tauri-apps/api/1.0.0:
+    resolution: {integrity: sha512-sPnq8/WQumCnyHERTeqKQiryRoM8X4ImMT7K+BJ3zT7bmp/n5162fZS/ZqYIFxKHgQqzwWqT7C96Sb0/CL7WsA==}
+    engines: {node: '>= 12.22.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
     dependencies:
-      type-fest: 2.12.2
+      type-fest: 2.13.1
     dev: false
 
   /@tauri-apps/cli-darwin-arm64/1.0.0-rc.4:
@@ -2601,8 +2601,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /type-fest/2.12.2:
-    resolution: {integrity: sha512-qt6ylCGpLjZ7AaODxbpyBZSs9fCI9SkL3Z9q2oxMBQhs/uyY+VD8jHA8ULCGmWQJlBgqvO3EJeAngOHD8zQCrQ==}
+  /type-fest/2.13.1:
+    resolution: {integrity: sha512-hXYyrPFwETT2swFLHeoKtJrvSF/ftG/sA15/8nGaLuaDGfVAaq8DYFpu4yOyV4tzp082WqnTEoMsm3flKMI2FQ==}
     engines: {node: '>=12.20'}
     dev: false
 
