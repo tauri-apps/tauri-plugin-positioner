@@ -8,14 +8,14 @@ importers:
       covector: 0.7.3
       tslib: 2.4.0
       tsup: 6.1.2
-      typescript: 4.7.3
+      typescript: 4.7.4
     dependencies:
       '@tauri-apps/api': 1.0.0
     devDependencies:
       covector: 0.7.3
       tslib: 2.4.0
-      tsup: 6.1.2_typescript@4.7.3
-      typescript: 4.7.3
+      tsup: 6.1.2_typescript@4.7.4
+      typescript: 4.7.4
 
   examples/svelte-app:
     specifiers:
@@ -2545,7 +2545,7 @@ packages:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: true
 
-  /tsup/6.1.2_typescript@4.7.3:
+  /tsup/6.1.2_typescript@4.7.4:
     resolution: {integrity: sha512-Hw4hKDHaAQkm2eVavlArEOrAPA93bziRDamdfwaNs0vXQdUUFfItvUWY0L/F6oQQMVh6GvjQq1+HpDXw8UKtPA==}
     engines: {node: '>=14'}
     hasBin: true
@@ -2575,7 +2575,7 @@ packages:
       source-map: 0.8.0-beta.0
       sucrase: 3.21.0
       tree-kill: 1.2.2
-      typescript: 4.7.3
+      typescript: 4.7.4
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -2597,8 +2597,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript/4.7.3:
-    resolution: {integrity: sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==}
+  /typescript/4.7.4:
+    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
