@@ -3,7 +3,7 @@
   windows_subsystem = "windows"
 )]
 use tauri::{Manager, SystemTray, SystemTrayEvent, CustomMenuItem, SystemTrayMenu};
-use tauri_plugin_positioner::{on_tray_event, Position, Positioner, WindowExt};
+use tauri_plugin_positioner::{on_tray_event, Position, WindowExt};
 
 fn main() {
   let tray_left = CustomMenuItem::new("tray_left".to_string(), "TrayLeft");
@@ -24,7 +24,7 @@ fn main() {
   let system_tray = SystemTray::new().with_menu(tray_menu);
 
   tauri::Builder::default()
-    .plugin(Positioner::default())
+    .plugin(tauri_plugin_positioner::init())
     .setup(|app| {
       let win = app.get_window("main").unwrap();
 

@@ -22,3 +22,6 @@ serde_repr = "^0.1.8"
 
 [features]
 system-tray = [ "tauri/system-tray" ]
+
+[workspace]
+members = ["examples/*/src-tauri"]
