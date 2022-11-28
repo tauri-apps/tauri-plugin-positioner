@@ -42,6 +42,9 @@ You need to register the plugin first:
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_positioner::init())
+        .on_system_tray_event(|app, event| {
+           tauri_plugin_positioner::on_tray_event(app, &event);
+        })
         .run(tauri::generate_context!())
         .expect("failed to run app");
 }
