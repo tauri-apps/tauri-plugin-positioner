@@ -1,11 +1,1 @@
-/.vs
-.DS_Store
-.Thumbs.db
-*.sublime*
-.idea/
-debug.log
-.vscode/settings.json
-
-/target
-node_modules/
-.npmrc
+node_modules

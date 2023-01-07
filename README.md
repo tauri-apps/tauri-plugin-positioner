@@ -1,42 +1,55 @@
-# Tauri plugin positioner
+![plugin-positioner](banner.png)
 
-[![Crates.io][crates-badge]][crates-url]
-[![Documentation][docs-badge]][docs-url]
-[![MIT licensed][mit-badge]][mit-url]
+Position your windows at well-known locations.
 
-[crates-badge]: https://img.shields.io/crates/v/tauri-plugin-positioner.svg
-[crates-url]: https://crates.io/crates/tauri-plugin-positioner
-[docs-badge]: https://img.shields.io/docsrs/tauri-plugin-positioner.svg
-[docs-url]: https://docs.rs/tauri-plugin-positioner
-[mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[mit-url]: LICENSE
-
-A plugin for Tauri that helps position your windows at well-known locations.
-
-This plugin is a port of [electron-positioner](https://github.com/jenslind/electron-positioner) for [tauri](https://tauri.studio).
+This plugin is a port of [electron-positioner](https://github.com/jenslind/electron-positioner) for Tauri.
 
 ## Install
 
-### Rust
+There are three general methods of installation that we can recommend.
+
+1. Use crates.io and npm (easiest, and requires you to trust that our publishing pipeline worked)
+2. Pull sources directly from Github using git tags / revision hashes (most secure)
+3. Git submodule install this repo in your tauri project and then use file protocol to ingest the source (most secure, but inconvenient to use)
+
+Install the Core plugin by adding the following to your `Cargo.toml` file:
+
+`src-tauri/Cargo.toml`
 
 ```toml
 [dependencies]
 tauri-plugin-positioner = "1.0"
+# or through git
+tauri-plugin-positioner = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "dev" }
 ```
 
-### JavaScript
+You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
-```
+> Note: Since most JavaScript package managers are unable to install packages from git monorepos we provide read-only mirrors of each plugin. This makes installation option 2 more ergonomic to use.
+
+```sh
 pnpm add tauri-plugin-positioner
 # or
-npm install tauri-plugin-positioner
+npm add tauri-plugin-positioner
 # or
 yarn add tauri-plugin-positioner
 ```
 
+Or through git:
+
+```sh
+pnpm add https://github.com/tauri-apps/tauri-plugin-positioner
+# or
+npm add https://github.com/tauri-apps/tauri-plugin-positioner
+# or
+yarn add https://github.com/tauri-apps/tauri-plugin-positioner
+```
+
 ## Usage
 
-You need to register the plugin first:
+First you need to register the core plugin with Tauri:
+
+`src-tauri/src/main.rs`
 
 ```rust
 fn main() {
@@ -47,45 +60,33 @@ fn main() {
            tauri_plugin_positioner::on_tray_event(app, &event);
         })
         .run(tauri::generate_context!())
-        .expect("failed to run app");
+        .expect("error while running tauri application");
 }
 ```
 
-Now you can import the JavaScript API package and move the window:
+Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { move_window, Position } from 'tauri-plugin-positioner-api'
+import { move_window, Position } from "tauri-plugin-positioner-api";
 
-move_window(Position.TopRight)
+move_window(Position.TopRight);
 ```
 
-### Rust only
-
-If you only intend on moving the window from rust code, you can import the `Window` trait extension instead of registering the plugin:
-
-> Note: `Window.move_window` method must be called from a different thread!
+If you only intend on moving the window from rust code, you can import the Window trait extension instead of registering the plugin:
 
 ```rust
 use tauri_plugin_positioner::{WindowExt, Position};
 
-fn main() {
-    tauri::Builder::default()
-        .setup(|app| {
-          let mut win = app.get_window("main").unwrap();
-      
-          let _ = win.move_window(Position::TopRight);
-          
-          Ok(())
-        })
-        .run(tauri::generate_context!())
-        .expect("failed to run app");
-}
+let mut win = app.get_window("main").unwrap();
+let _ = win.move_window(Position::TopRight);
 ```
 
 ## Contributing
 
-PRs are welcome!
+PRs accepted. Please make sure to read the Contributing Guide before making a pull request.
 
 ## License
 
-[MIT © Jonas Kruckenberg](./LICENSE)
+Code: (c) 2021 - Jonas Kruckenberg. 2021 - Present - The Tauri Programme within The Commons Conservancy.
+
+MIT or MIT/Apache 2.0 where applicable.

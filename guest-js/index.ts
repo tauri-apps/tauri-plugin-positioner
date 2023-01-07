@@ -27,11 +27,11 @@ export enum Position {
 /**
  * Moves the `Window` to the given {@link Position} using `WindowExt.move_window()`
  * All positions are relative to the **current** screen.
- * 
+ *
  * @param to The {@link Position} to move to.
  */
-export function move_window(to: Position) {
-  invoke('plugin:positioner|move_window', {
-    position: to
-  })
+export async function moveWindow(to: Position): Promise<void> {
+  await invoke("plugin:positioner|move_window", {
+    position: to,
+  });
 }

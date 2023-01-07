@@ -1,7 +1,7 @@
 /**
  * Well known window positions.
  */
-declare enum Position {
+export declare enum Position {
     TopLeft = 0,
     TopRight = 1,
     BottomLeft = 2,
@@ -24,6 +24,4 @@ declare enum Position {
  *
  * @param to The {@link Position} to move to.
  */
-declare function move_window(to: Position): void;
-
-export { Position, move_window };
+export declare function moveWindow(to: Position): Promise<void>;
