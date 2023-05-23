@@ -1,6 +1,7 @@
-import { invoke } from '@tauri-apps/api/tauri';
-
 // Copyright 2021 Jonas Kruckenberg
+// Copyright 2019-2023 Tauri Programme within The Commons Conservancy
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: MIT
 /**
  * Well known window positions.
  */
@@ -29,7 +30,7 @@ var Position;
  * @param to The {@link Position} to move to.
  */
 async function moveWindow(to) {
-    await invoke("plugin:positioner|move_window", {
+    await window.__TAURI_INVOKE__("plugin:positioner|move_window", {
         position: to,
     });
 }
