@@ -1,6 +1,7 @@
 import { invoke } from '@tauri-apps/api/tauri';
 
 // Copyright 2021 Jonas Kruckenberg
+// SPDX-License-Identifier: MIT
 /**
  * Well known window positions.
  */
