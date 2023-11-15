@@ -38,4 +38,3 @@ async function moveWindow(to) {
 }
 
 export { Position, moveWindow };
-//# sourceMappingURL=index.mjs.map
