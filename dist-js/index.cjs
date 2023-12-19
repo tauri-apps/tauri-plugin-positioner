@@ -1,6 +1,6 @@
 'use strict';
 
-var primitives = require('@tauri-apps/api/primitives');
+var core = require('@tauri-apps/api/core');
 
 // Copyright 2021 Jonas Kruckenberg
 // Copyright 2019-2023 Tauri Programme within The Commons Conservancy
@@ -34,7 +34,7 @@ exports.Position = void 0;
  * @param to The {@link Position} to move to.
  */
 async function moveWindow(to) {
-    await primitives.invoke("plugin:positioner|move_window", {
+    await core.invoke("plugin:positioner|move_window", {
         position: to,
     });
 }
