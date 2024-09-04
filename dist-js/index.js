@@ -32,8 +32,8 @@ var Position;
  * @param to The {@link Position} to move to.
  */
 async function moveWindow(to) {
-    await invoke("plugin:positioner|move_window", {
-        position: to,
+    await invoke('plugin:positioner|move_window', {
+        position: to
     });
 }
 

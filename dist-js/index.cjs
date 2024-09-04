@@ -34,8 +34,8 @@ exports.Position = void 0;
  * @param to The {@link Position} to move to.
  */
 async function moveWindow(to) {
-    await core.invoke("plugin:positioner|move_window", {
-        position: to,
+    await core.invoke('plugin:positioner|move_window', {
+        position: to
     });
 }
 
