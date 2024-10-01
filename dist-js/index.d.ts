@@ -1,3 +1,4 @@
+import type { TrayIconEvent } from '@tauri-apps/api/tray';
 /**
  * Well known window positions.
  */
@@ -25,3 +26,4 @@ export declare enum Position {
  * @param to The {@link Position} to move to.
  */
 export declare function moveWindow(to: Position): Promise<void>;
+export declare function handleIconState(event: TrayIconEvent): Promise<void>;

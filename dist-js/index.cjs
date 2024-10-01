@@ -38,5 +38,15 @@ async function moveWindow(to) {
         position: to
     });
 }
+async function handleIconState(event) {
+    await invokeSetTrayIconState(event.rect);
+}
+async function invokeSetTrayIconState(rect) {
+    await core.invoke('plugin:positioner|set_tray_icon_state', {
+        position: rect.position,
+        size: rect.size
+    });
+}
 
+exports.handleIconState = handleIconState;
 exports.moveWindow = moveWindow;
