@@ -4,6 +4,14 @@ Position your windows at well-known locations.
 
 This plugin is a port of [electron-positioner](https://github.com/jenslind/electron-positioner) for Tauri.
 
+| Platform | Supported |
+| -------- | --------- |
+| Linux    | ✓         |
+| Windows  | ✓         |
+| macOS    | ✓         |
+| Android  | x         |
+| iOS      | x         |
+
 ## Install
 
 _This plugin requires a Rust version of at least **1.75**_
@@ -94,8 +102,8 @@ import {
 const action = async (event: TrayIconEvent) => {
   // add the handle in the action to update the state
   await handleIconState(event);
-  if ("click" in event) {
-    const { click } = event;
+
+  if (event.type === "Click") {
     // note this option requires enabling the `tray-icon`
     //   feature in the Cargo.toml
     await moveWindow(Position.TrayLeft);

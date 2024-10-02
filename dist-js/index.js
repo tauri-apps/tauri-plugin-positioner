@@ -37,12 +37,19 @@ async function moveWindow(to) {
     });
 }
 async function handleIconState(event) {
-    await invokeSetTrayIconState(event.rect);
-}
-async function invokeSetTrayIconState(rect) {
+    const size = {};
+    size[`${event.rect.size.type}`] = {
+        width: event.rect.size.width,
+        height: event.rect.size.height
+    };
+    const position = {};
+    position[`${event.rect.position.type}`] = {
+        x: event.rect.position.x,
+        y: event.rect.position.y
+    };
     await invoke('plugin:positioner|set_tray_icon_state', {
-        position: rect.position,
-        size: rect.size
+        position,
+        size
     });
 }
 
