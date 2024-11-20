@@ -26,4 +26,12 @@ export declare enum Position {
  * @param to The {@link Position} to move to.
  */
 export declare function moveWindow(to: Position): Promise<void>;
+/**
+ * Moves the `Window` to the given {@link Position} using `WindowExt.move_window_constrained()`
+ *
+ * This move operation constrains the window to the screen dimensions in case of
+ * tray-icon positions.
+ * @param to The (tray) {@link Position} to move to.
+ */
+export declare function moveWindowConstrained(to: Position): Promise<void>;
 export declare function handleIconState(event: TrayIconEvent): Promise<void>;

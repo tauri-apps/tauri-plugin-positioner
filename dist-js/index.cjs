@@ -38,6 +38,18 @@ async function moveWindow(to) {
         position: to
     });
 }
+/**
+ * Moves the `Window` to the given {@link Position} using `WindowExt.move_window_constrained()`
+ *
+ * This move operation constrains the window to the screen dimensions in case of
+ * tray-icon positions.
+ * @param to The (tray) {@link Position} to move to.
+ */
+async function moveWindowConstrained(to) {
+    await core.invoke('plugin:positioner|move_window_constrained', {
+        position: to
+    });
+}
 async function handleIconState(event) {
     await core.invoke('plugin:positioner|set_tray_icon_state', {
         position: event.rect.position,
@@ -47,3 +59,4 @@ async function handleIconState(event) {
 
 exports.handleIconState = handleIconState;
 exports.moveWindow = moveWindow;
+exports.moveWindowConstrained = moveWindowConstrained;
